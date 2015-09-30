@@ -4,13 +4,12 @@ module Pastebin::Shadowcat {
     use HTML::Entity;
     my $Pastebin_URL = 'http://fpaste.scsys.co.uk/';
 
-
     sub paste ($paste, $summary?) is export {
         my $paste_id = (LWP::Simple.new.post( $Pastebin_URL ~ 'paste', {},
             'channel='
             ~ '&nick='
-            ~ '&summary=' ~ uri_encode( ($summary // '').Str )
-            ~ '&paste=' ~ uri_encode( $paste.Str )
+            ~ '&summary=' ~ uri_encode_component( ($summary // '').Str )
+            ~ '&paste='   ~ uri_encode_component( $paste.Str )
             ~ '&Paste+it=Paste+it'
         ) ~~ m:P5{meta http-equiv="refresh" content="5;url=http://fpaste.scsys.co.uk/(\d+)">})[0];
 
