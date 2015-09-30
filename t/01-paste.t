@@ -1,8 +1,8 @@
 
+use v6;
 use Test;
+use lib 'lib';
 use Pastebin::Shadowcat;
-
-plan 5;
 
 my $paste_url = paste("Perl 6 Module Test<p>\n& <pre>foo", 'My Summary <>&');
 ok $paste_url ~~ /^^ 'http://fpaste.scsys.co.uk/'  \d+ $$/,
@@ -17,3 +17,5 @@ is $content, "Perl 6 Module Test<p>\n& <pre>foo",
     'Retrieved content is good when using paste ID only';
 is $summary, 'My Summary <>&',
     'Retrieved summary is good when using paste ID only';
+
+done-testing;
