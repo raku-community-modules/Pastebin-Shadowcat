@@ -1,11 +1,13 @@
-unit module Pastebin::Shadowcat;
+unit class Pastebin::Shadowcat:version<2.001001>;
+
 use LWP::Simple;
 use URI::Encode;
 use HTML::Entity;
-my $Pastebin_URL = 'http://fpaste.scsys.co.uk/';
 
-sub paste ($paste, $summary?) is export {
-    my $paste_id = (LWP::Simple.new.post( $Pastebin_URL ~ 'paste', {},
+has $.pastebin_url = 'http://fpaste.scsys.co.uk/';
+
+method paste ($paste, $summary?) returns Str {
+    my $paste_id = (LWP::Simple.new.post( $.pastebin_url ~ 'paste', {},
         'channel='
         ~ '&nick='
         ~ '&summary=' ~ uri_encode_component( ($summary // '').Str )
@@ -16,11 +18,11 @@ sub paste ($paste, $summary?) is export {
     $paste_id
         or fail 'Did not find paste ID in response from the pastebin';
 
-    return $Pastebin_URL ~ $paste_id;
+    return $.pastebin_url ~ $paste_id;
 }
 
-sub get_paste ($what) is export {
-    my $paste_url = $what ~~ m:P5/\D/ ?? $what !! $Pastebin_URL ~ $what;
+method fetch ($what) returns List {
+    my $paste_url = $what ~~ m:P5/\D/ ?? $what !! $.pastebin_url ~ $what;
 
     my $content = LWP::Simple.get($paste_url)
         or fail 'Did not find that paste';
@@ -32,4 +34,3 @@ sub get_paste ($what) is export {
         decode-entities( $summary ),
     );
 }
-
