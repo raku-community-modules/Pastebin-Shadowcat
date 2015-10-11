@@ -1,5 +1,7 @@
 =encoding utf8
 
+=for HTML <a href="https://travis-ci.org/zoffixznet/perl6-Pastebin-Shadowcat"><img src="https://travis-ci.org/zoffixznet/perl6-Pastebin-Shadowcat.svg?branch=master"></a>
+
 =head1 NAME
 
 Pastebin::Shadowcat - Perl 6 interface to http://fpaste.scsys.co.uk/
