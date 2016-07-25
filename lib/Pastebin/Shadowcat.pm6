@@ -21,7 +21,7 @@ method paste ($paste, $summary?) returns Str {
 method fetch ($what) returns List {
     my $paste_url = $what ~~ m:P5/\D/ ?? $what !! $!pastebin_url ~ $what;
 
-    my $res = HTTP::UserAgent.get: $paste_url;
+    my $res = HTTP::UserAgent.post: $paste_url;
     $res.is-success or fail 'Did not find that paste';
     $res.content ~~ /
         '<br>' \s+ '<b>' $<summary>=.+ '</b>' .+ '<pre>' $<paste>=.+ '</pre>'
