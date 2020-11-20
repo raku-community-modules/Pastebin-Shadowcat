@@ -4,12 +4,12 @@
     "license"      : "Artistic-2.0",
     "version"      : "2.001003",
     "tags"         : ["pastebin"],
-    "description"  : "Use http://fpaste.scsys.co.uk/ pastebin from Perl 6",
+    "description"  : "Use http://fpaste.scsys.co.uk/ pastebin from Raku",
     "depends"      : [ "HTTP::UserAgent", "URI::Encode", "HTML::Entity" ],
     "test-depends" : [ "Test" ],
     "provides"     : {
         "Pastebin::Shadowcat" : "lib/Pastebin/Shadowcat.pm6"
     },
     "authors"      : ["Zoffix Znet"],
-    "support"      : {"source" : "git://github.com/zoffixznet/perl6-Pastebin-Shadowcat.git"}
+    "support"      : {"source" : "git://github.com/raku-community-modules/Pastebin-Shadowcat.git"}
 }
