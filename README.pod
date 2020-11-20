@@ -4,7 +4,7 @@
 
 =head1 NAME
 
-Pastebin::Shadowcat - Perl 6 interface to http://fpaste.scsys.co.uk/
+Pastebin::Shadowcat - Raku interface to http://fpaste.scsys.co.uk/
 
 =head1 SYNOPSIS
 
@@ -55,12 +55,12 @@ ID number of the paste you want to retrieve.
 =head1 REPOSITORY
 
 Fork this module on GitHub:
-L<https://github.com/zoffixznet/perl6-Pastebin-Shadowcat>
+L<https://github.com/raku-community-modules/Pastebin-Shadowcat>
 
 =head1 BUGS
 
 To report bugs or request features, please use
-L<https://github.com/zoffixznet/perl6-Pastebin-Shadowcat/issues>
+L<https://github.com/raku-community-modules/Pastebin-Shadowcat/issues>
 
 =head1 AUTHOR
 
@@ -68,7 +68,7 @@ Zoffix Znet L<http://zoffix.com/>
 
 =head1 LICENSE
 
-You can use and distribute this module under the same terms as Perl 6
+You can use and distribute this module under the same terms as Raku
 itself. See the C<LICENSE> file included in this distribution for complete
 details.
 
