@@ -1,14 +1,15 @@
 {
+    "auth" : "zef:raku-community-modules",
     "perl"         : "6.c",
     "name"         : "Pastebin::Shadowcat",
     "license"      : "Artistic-2.0",
-    "version"      : "2.001003",
-    "tags"         : ["pastebin"],
+    "version"      : "2.002",
+    "tags"         : ["PASTEBIN"],
     "description"  : "Use http://fpaste.scsys.co.uk/ pastebin from Raku",
     "depends"      : [ "HTTP::UserAgent", "URI::Encode", "HTML::Entity" ],
-    "test-depends" : [ "Test" ],
+    "test-depends" : [ ],
     "provides"     : {
-        "Pastebin::Shadowcat" : "lib/Pastebin/Shadowcat.pm6"
+        "Pastebin::Shadowcat" : "lib/Pastebin/Shadowcat.rakumod"
     },
     "authors"      : ["Zoffix Znet"],
     "support"      : {"source" : "git://github.com/raku-community-modules/Pastebin-Shadowcat.git"}

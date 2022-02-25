@@ -1,5 +1,8 @@
 Revision history for Pastebin-Shadowcat
 
+{{$NEXT}}
+    - First version in the zef ecosystem
+
 2.001001  2015-10-11
   - Use OO instead of plain subs to be compat with App::Nopaste
 
