@@ -1,6 +1,6 @@
 use HTTP::UserAgent;
 use URI::Encode;
-use HTML::Entity;
+use HTML::Entity::Fast;
 
 unit class Pastebin::Shadowcat:ver<2.002>:auth<zef:raku-community-modules>;
 
@@ -27,7 +27,7 @@ method fetch ($what) returns List {
         '<br>' \s+ '<b>' $<summary>=.+ '</b>' .+ '<pre>' $<paste>=.+ '</pre>'
     / or fail 'Could not find paste content on the returned page';
 
-    decode-entities(~$<paste>), decode-entities(~$<summary>),
+    decode-html-entities(~$<paste>), decode-html-entities(~$<summary>),
 }
 
 =begin pod
