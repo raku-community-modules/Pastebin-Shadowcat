@@ -2,6 +2,9 @@ Revision history for Pastebin-Shadowcat
 
 {{$NEXT}}
 
+2.003  2023-01-18T00:24:52+01:00
+    - migrate to HTML::Entity::Fast for entity decoding
+
 2.002  2022-02-25T20:46:55+01:00
     - First version in the zef ecosystem
 

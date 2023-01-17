@@ -2,7 +2,7 @@ use HTTP::UserAgent;
 use URI::Encode;
 use HTML::Entity::Fast;
 
-unit class Pastebin::Shadowcat:ver<2.002>:auth<zef:raku-community-modules>;
+unit class Pastebin::Shadowcat:ver<2.003>:auth<zef:raku-community-modules>;
 
 has $!pastebin_url = 'http://fpaste.scsys.co.uk/';
 
