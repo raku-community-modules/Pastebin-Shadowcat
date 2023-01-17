@@ -8,7 +8,7 @@
   "depends": [
     "HTTP::UserAgent",
     "URI::Encode",
-    "HTML::Entity"
+    "HTML::Entity::Fast"
   ],
   "description": "Raku interface to http://fpaste.scsys.co.uk/",
   "license": "Artistic-2.0",
